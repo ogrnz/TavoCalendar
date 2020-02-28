@@ -1,0 +1,184 @@
+$brand-color: green;
+$brand-text-color: white;
+
+$compliment-color: #F1F1F1;
+
+$icon-size: 16px;
+$font-size: 13px;
+
+$step-xs: 2px;
+$step-sm: 4px;
+$step-md: 8px;
+
+.tavo-calendar {
+    text-align: center;
+    font-size: $font-size;
+}
+
+.tavo-calendar__info {
+    display: none;
+    text-align: left;
+    margin-bottom: 8px;
+    font-size: 12px;
+
+    span {
+        font-weight: bold;
+        background-color:#f1f1f1;  
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
+
+.tavo-calendar__header{
+    display: flex;
+    justify-content: space-between;
+    background-color: $brand-color;
+    color: $brand-text-color;
+    align-items: center;
+    padding: $step-sm $step-md;
+}
+
+.tavo-calendar__nav {
+    float:left;
+    font-size:1.125em;
+    font-weight:bold;
+    position:relative;
+    padding:0;
+    cursor:pointer;
+    fill: $brand-text-color;
+
+    &_prev,
+    &_next {
+        text-align:left;
+
+        svg {
+            width: $icon-size;
+            height: $icon-size;
+        }
+    }
+}
+
+.tavo-calendar__code {
+    &_lock {
+        opacity: 0.7;
+    }   
+    
+    &_lock:hover {
+        opacity: 1;
+    }
+    
+    &_lock .tavo-calendar__days {
+        pointer-events: none;
+    }
+}
+
+.tavo-calendar__week-names {
+    display: flex;
+    background-color: $compliment-color;
+    font-size: 12px;
+    padding: 4px;
+}
+
+.tavo-calendar__days {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-top: 5px;
+}
+
+.tavo-calendar__reset {
+    float: right;
+
+    svg {
+        height: $icon-size;
+        width: $icon-size;
+    }
+}
+
+.tavo-calendar__weekday {
+    flex: 1;
+    text-align: center;
+}
+
+.tavo-calendar__day {
+    flex: 1;
+
+    min-width: 14%;
+    max-width: 15%;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    span {
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        display: inline-block;
+        line-height: 26px;
+        font-size: 12px;
+
+        &:hover {
+            background-color: lightblue;
+        }
+    }
+
+    &_highlight day{
+        color: red !important;
+    }
+
+    &_abs-today day     {
+        background-color: lightgoldenrodyellow;
+        border-radius: unset;
+    }
+
+    &_today:hover day:hover {
+        border-radius: 50%;
+    }
+
+    &_off,
+    &_exp,
+    &_different-month,
+    &_lock {
+        cursor: default;
+        color: grey;
+        background-color: unset;
+
+        day, day:hover {
+            background: unset;
+        }
+    }
+
+    &_off span {
+        text-decoration: line-through;
+    }
+
+    &_select span {
+        background-color: unset;
+    }
+
+    &_select {
+
+        span {
+            background-color: lightblue;
+            border-radius: unset;
+        }
+
+        day:hover {
+            background-color: lightblue;
+        }
+    }
+
+    &_range-select {
+        background-color: lightblue;
+    }
+
+    &_select-lock {
+        pointer-events: none;
+        color: grey;
+    }
+}

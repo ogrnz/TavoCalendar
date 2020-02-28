@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>TavoCalendar event</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../dist/tavo-calendar.css">
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            #my-calendar {
+                max-width: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="my-calendar"></div>
+            
+        <script src="../node_modules/moment/moment.js" ></script>
+        <script src="../dist/tavo-calendar.js"></script>
+
+        <script>
+            const calendar_el = document.querySelector('#my-calendar');
+
+            const my_calendar = new TavoCalendar(calendar_el, {
+                date: "2014-12-21",
+                selected: ["2014-12-24"],
+                //range_select: true
+            })
+
+            calendar_el.addEventListener('calendar-select', (ev) => {
+                alert(my_calendar.getSelected())
+            })
+
+            calendar_el.addEventListener('calendar-change', (ev) => {
+                const m = my_calendar.getFocusMonth();
+
+                alert(`Month change to ${m}`)
+            })
+
+            // calendar_el.addEventListener('calendar-range', (ev) => {
+            //     const range = my_calendar.getRange();
+
+            //     alert(`From ${range.start} to ${range.end}`)
+            // })
+
+            // calendar_el.addEventListener('calendar-reset', (ev) => {
+            //     alert('Reset');
+            // })
+        </script>   
+    </body>
+</html>
