@@ -98,7 +98,7 @@
         const moment = window.moment || user_options.moment
 
         if (!moment) {
-            showError('warn', 'Moment.js library missing!');
+            showError('error', 'moment.js library missing!');
             return;
         }
 
