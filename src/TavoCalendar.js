@@ -95,7 +95,9 @@
     }
 
     var TavoCalendar = function(container_q, user_options) {
-        if (!window.moment) {
+        const moment = window.moment || user_options.moment
+
+        if (!moment) {
             showError('warn', 'Moment.js library missing!');
             return;
         }
