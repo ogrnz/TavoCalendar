@@ -1,5 +1,5 @@
 /*!
- * calendar 0.0.2
+ * calendar 0.0.3
  *
  * @license MIT
  * @author Justinas Bei
@@ -8,8 +8,8 @@
     if( typeof define === 'function' && define.amd ) {
         // AMD. Register as an anonymous module.
         define( function() {
-            root.fullpage = factory(window, document);
-            return root.fullpage;
+            root.TavoCalendar = factory(window, document);
+            return root.TavoCalendar;
         } );
     } else if( typeof exports === 'object' ) {
         // Node. Does not work with strict CommonJS.
@@ -95,8 +95,10 @@
     }
 
     var TavoCalendar = function(container_q, user_options) {
-        if (!window.moment) {
-            showError('warn', 'Moment.js library missing!');
+        const moment = window.moment || user_options.moment
+
+        if (!moment) {
+            showError('error', 'moment.js library missing!');
             return;
         }
 
