@@ -1,5 +1,5 @@
 /*!
- * calendar 0.0.2
+ * calendar 0.0.3
  *
  * @license MIT
  * @author Justinas Bei
