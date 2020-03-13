@@ -8,8 +8,8 @@
     if( typeof define === 'function' && define.amd ) {
         // AMD. Register as an anonymous module.
         define( function() {
-            root.fullpage = factory(window, document);
-            return root.fullpage;
+            root.TavoCalendar = factory(window, document);
+            return root.TavoCalendar;
         } );
     } else if( typeof exports === 'object' ) {
         // Node. Does not work with strict CommonJS.
