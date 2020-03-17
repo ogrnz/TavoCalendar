@@ -91,7 +91,8 @@
         future_select: true,
         past_select: false,
         frozen: false,
-        highligh_sunday: true
+        highligh_sunday: true,
+        highlight_saturday: false
     }
 
     var TavoCalendar = function(container_q, user_options) {
@@ -293,6 +294,10 @@
 
             //MEANINGFUL MARKERS
             if (this.state.highlight.indexOf(moment_copy.format(this.config.format)) > -1) {
+                day_wrapper_el.className =  day_wrapper_el.className + " " + CLASS_CALENDAR_DAY_HIGHTLIGHT;
+            }
+
+            if (this.config.highlight_saturday && moment_copy.isoWeekday() === 6) {
                 day_wrapper_el.className =  day_wrapper_el.className + " " + CLASS_CALENDAR_DAY_HIGHTLIGHT;
             }
 
