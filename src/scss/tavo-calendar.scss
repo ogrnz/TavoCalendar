@@ -127,16 +127,16 @@ $step-md: 8px;
         }
     }
 
-    &_highlight day{
+    &_highlight {
         color: red !important;
     }
 
-    &_abs-today day     {
+    &_abs-today     {
         background-color: lightgoldenrodyellow;
         border-radius: unset;
     }
 
-    &_today:hover day:hover {
+    &_today:hover span {
         border-radius: 50%;
     }
 

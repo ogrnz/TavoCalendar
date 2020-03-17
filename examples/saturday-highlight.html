@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>TavoCalendar saturday highlight</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../dist/tavo-calendar.css">
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            #my-calendar {
+                max-width: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="my-calendar"></div>
+            
+        <script src="../node_modules/moment/moment.js" ></script>
+        <script src="../dist/tavo-calendar.js"></script>
+
+        <script>
+            const my_calendar = new TavoCalendar('#my-calendar', {
+                date: "2014-12-21",
+                selected: ["2014-12-24"],
+                highlight_saturday: true
+            })
+        </script>   
+    </body>
+</html>
