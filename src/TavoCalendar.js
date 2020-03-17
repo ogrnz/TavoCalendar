@@ -1,5 +1,5 @@
 /*!
- * calendar 0.0.3
+ * calendar 0.0.4
  *
  * @license MIT
  * @author Justinas Bei
@@ -301,7 +301,7 @@
                 day_wrapper_el.className =  day_wrapper_el.className + " " + CLASS_CALENDAR_DAY_HIGHTLIGHT;
             }
 
-            if (this.state.highlight_sunday && moment_copy.isoWeekday() === 7) {
+            if (this.config.highlight_sunday && moment_copy.isoWeekday() === 7) {
                 day_wrapper_el.className =  day_wrapper_el.className + " " + CLASS_CALENDAR_DAY_HIGHTLIGHT;
             }
             

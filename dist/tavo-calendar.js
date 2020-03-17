@@ -91,7 +91,8 @@
         future_select: true,
         past_select: false,
         frozen: false,
-        highligh_sunday: true
+        highlight_sunday: true,
+        highlight_saturday: false
     }
 
     var TavoCalendar = function(container_q, user_options) {
@@ -296,7 +297,11 @@
                 day_wrapper_el.className =  day_wrapper_el.className + " " + CLASS_CALENDAR_DAY_HIGHTLIGHT;
             }
 
-            if (this.state.highligh_sunday && moment_copy.isoWeekday() === 7) {
+            if (this.config.highlight_saturday && moment_copy.isoWeekday() === 6) {
+                day_wrapper_el.className =  day_wrapper_el.className + " " + CLASS_CALENDAR_DAY_HIGHTLIGHT;
+            }
+
+            if (this.config.highlight_sunday && moment_copy.isoWeekday() === 7) {
                 day_wrapper_el.className =  day_wrapper_el.className + " " + CLASS_CALENDAR_DAY_HIGHTLIGHT;
             }
             
