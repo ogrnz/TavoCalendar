@@ -93,7 +93,7 @@
         frozen: false,
         highlight_sunday: true,
         highlight_saturday: false,
-        custom_properties: null
+        custom_attributes: null
     }
 
     var TavoCalendar = function(container_q, user_options) {
@@ -128,7 +128,7 @@
             selected: config.selected ? config.selected : [],
             highlight: config.highlight ? config.highlight : [],
             blacklist: config.blacklist ? config.blacklist : [],
-            custom_properties: config.custom_properties ? config.custom_properties : {},
+            custom_attributes: config.custom_attributes ? config.custom_attributes : {},
             date_start: config.date_start,
             date_end: config.date_end,
             lock: config.lock || config.frozen 
@@ -268,8 +268,8 @@
             day_el.className = CLASS_CALENDAR_INNER;
             
             // Add custom attributes to days in DOM
-            if(this.config.custom_properties){
-                const attributes = Object.entries(this.config.custom_properties);
+            if(this.config.custom_attributes){
+                const attributes = Object.entries(this.config.custom_attributes);
                 for(const attribute of attributes){
                     const key = attribute[0];
                     const value = attribute[1];

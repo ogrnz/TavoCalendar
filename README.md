@@ -33,7 +33,8 @@ const my_calendar = new TavoCalendar('.calendar', options);
 * `future_select` (*optional*) -- disable selecting days after `date` (defaults to `true`)
 * `past_select` (*optional*) -- disable selecting days before `date` (defaults to `false`)
 * `frozen` (*optional*) -- disable all interactions (defaults to `false`)
-* `highligh_sunday` (*optional*) -- highlight sundays (defaults to `true`)
+* `highlight_sunday` (*optional*) -- highlight sundays (defaults to `true`)
+* `custom_attributes` (*optional*) -- `Object` that adds custom attributes `data-Object.property` to your day elements in DOM. See `examples/custom.html` for examples  (defaults to `null`)
 
 **Available methods**
 
