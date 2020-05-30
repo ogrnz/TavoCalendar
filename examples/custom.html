@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>TavoCalendar basic</title>
+        <title>TavoCalendar custom attributes</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../dist/tavo-calendar.css">
         <style>
@@ -17,14 +17,24 @@
     <body>
         <div id="my-calendar"></div>
             
-        <script src="../node_modules/moment/moment.js" ></script>
-        <script src="../dist/tavo-calendar.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
+        <script src="../src/TavoCalendar.js"></script>
 
         <script>
             const my_calendar = new TavoCalendar('#my-calendar', {
                 date: "2014-12-21",
-                selected: ["2014-12-24"]
+                selected: ["2014-12-24"],
+                custom_attributes: {
+                    'href': '/link/',
+                    'foo': 'bar' 
+                }
             })
+
+            /*
+                Your day element in DOM becomes:
+                <span class="tavo-calendar__day-inner" data-href="/link/" data-foo="bar">24</span>
+                Notice the data-* attributes
+            */
         </script>   
     </body>
 </html>
