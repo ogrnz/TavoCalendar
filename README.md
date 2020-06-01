@@ -1,3 +1,5 @@
+*This forks add the ability to add custom attributes to the day DOM element. See examples/custom.html*
+
 # TavoCalendar
 
 Display calendar and pick dates (singular or range).
